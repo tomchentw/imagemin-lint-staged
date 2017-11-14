@@ -13,6 +13,7 @@ describe("index module", () => {
     const before = stats();
     execSync(`node ./src/index.js ${FILENAMES}`);
     const after = stats();
+    execSync(`git checkout .`);
     expect(after).not.toEqual(before);
 
     expect(before).toMatchSnapshot();
