@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`index module should work as expected 1`] = `
+Array [
+  Object {
+    "f": "./src/__fixtures__/test.gif",
+    "size": 78080,
+  },
+  Object {
+    "f": "./src/__fixtures__/test.jpg",
+    "size": 50986,
+  },
+  Object {
+    "f": "./src/__fixtures__/test.png",
+    "size": 71834,
+  },
+  Object {
+    "f": "./src/__fixtures__/test.svg",
+    "size": 25118,
+  },
+]
+`;
+
+exports[`index module should work as expected 2`] = `
+Array [
+  Object {
+    "f": "./src/__fixtures__/test.gif",
+    "size": 80201,
+  },
+  Object {
+    "f": "./src/__fixtures__/test.jpg",
+    "size": 45131,
+  },
+  Object {
+    "f": "./src/__fixtures__/test.png",
+    "size": 61692,
+  },
+  Object {
+    "f": "./src/__fixtures__/test.svg",
+    "size": 20683,
+  },
+]
+`;
