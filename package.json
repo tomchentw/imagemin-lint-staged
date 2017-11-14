@@ -22,7 +22,7 @@
   "keywords": ["imagemin", "CLI", "git hook", "compress images", "lint-staged"],
   "scripts": {
     "precommit": "lint-staged",
-    "test": "jest",
+    "test": "jest --runInBand",
     "prebuild:lib": "rimraf lib",
     "build:lib":
       "babel-multi-env --multi-versions 8.0.0 6.0.0 --out-dir lib --given 'src/**/*.js'",
