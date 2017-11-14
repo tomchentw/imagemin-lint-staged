@@ -1,5 +1,5 @@
 # imagemin-lint-staged
->
+> imagemin CLI designed for lint-staged usage with sensible defaults
 
 [![Version][npm-image]][npm-url] [![Travis CI][travis-image]][travis-url] [![Quality][codeclimate-image]][codeclimate-url] [![Coverage][codeclimate-coverage-image]][codeclimate-coverage-url] [![Dependencies][gemnasium-image]][gemnasium-url] [![Gitter][gitter-image]][gitter-url]
 
@@ -12,8 +12,18 @@ npm i --save-dev imagemin-lint-staged
 
 ## Usage
 
+Use in conjuntion with [lint-staged][lint-staged]. In your `package.json`
+
+```json
+  "lint-staged": {
+    "*.{png,jpeg,jpg,gif,svg}": ["imagemin-lint-staged", "git add"]
+  },
+```
+
 
 ## Options
+
+N/A
 
 
 ## Contributing
@@ -27,6 +37,7 @@ npm i --save-dev imagemin-lint-staged
 5. Create new Pull Request
 
 
+[lint-staged]: https://github.com/okonet/lint-staged
 [npm-image]: https://img.shields.io/npm/v/imagemin-lint-staged.svg?style=flat-square
 [npm-url]: https://www.npmjs.org/package/imagemin-lint-staged
 
