@@ -1,7 +1,8 @@
 {
   "name": "imagemin-lint-staged",
   "version": "0.1.0",
-  "description": "",
+  "description":
+    "imagemin CLI designed for lint-staged usage with sensible defaults",
   "license": "MIT",
   "author": {
     "name": "tomchentw",
@@ -18,13 +19,13 @@
   "homepage": "https://github.com/tomchentw/imagemin-lint-staged/",
   "bin": "lib/index.js",
   "files": ["lib/", "src/", "CHANGELOG.md"],
-  "keywords": ["lint-staged"],
+  "keywords": ["imagemin", "CLI", "git hook", "compress images", "lint-staged"],
   "scripts": {
     "precommit": "lint-staged",
     "test": "jest",
     "prebuild:lib": "rimraf lib",
     "build:lib":
-      "babel-multi-env --multi-versions 8.0.0,6.0.0,4.0.0,0.12.0,0.10.0 --out-dir lib 'src/**/*.js'",
+      "babel-multi-env --multi-versions 8.0.0 6.0.0 --out-dir lib --given 'src/**/*.js'",
     "precommit:lib": "npm run build:lib",
     "commit:lib":
       "git add -A && git commit -m 'chore(lib): compile from src with `babel-multi-env`'",
@@ -32,6 +33,7 @@
     "release": "standard-version"
   },
   "lint-staged": {
+    "*.{png,jpeg,jpg,gif,svg}": ["imagemin-lint-staged", "git add"],
     "*.{js,jsx,json,css}": ["prettier --write", "git add"]
   },
   "babel": {
