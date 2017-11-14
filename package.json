@@ -17,8 +17,8 @@
     "url": "https://github.com/tomchentw/imagemin-lint-staged/issues"
   },
   "homepage": "https://github.com/tomchentw/imagemin-lint-staged/",
-  "bin": "lib/index.js",
-  "files": ["lib/", "src/", "CHANGELOG.md"],
+  "bin": "bin/index.js",
+  "files": ["bin/", "lib/", "src/", "CHANGELOG.md"],
   "keywords": ["imagemin", "CLI", "git hook", "compress images", "lint-staged"],
   "scripts": {
     "precommit": "lint-staged",
