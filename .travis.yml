@@ -2,14 +2,17 @@ dist: trusty
 sudo: required
 language: node_js
 node_js:
-- '4'
 - '6'
 - '8'
 before_script:
-  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
-  - chmod +x ./cc-test-reporter
-  - ./cc-test-reporter before-build
+- curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+- chmod +x ./cc-test-reporter
+- "./cc-test-reporter before-build"
 script:
-  - npm test -- --coverage
+- npm test -- --coverage
 after_script:
-  - if [[ "$TRAVIS_PULL_REQUEST" == "false" && `node --version` == *v8* ]]; then ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT; fi
+- if [[ "$TRAVIS_PULL_REQUEST" == "false" && `node --version` == *v8* ]]; then ./cc-test-reporter
+  after-build --exit-code $TRAVIS_TEST_RESULT; fi
+env:
+  global:
+    secure: afTzTI4cFi/PB+p2svh9xy2wtzpgz5OD1cm0JipofHxWmartj4hSQJR62bX0bdq1eJvW2v6/Vso5W+F92GK+oi5i6S91So4S35JgjDPX9Xa+21h8iBRVOq9BhmwsDu2th67uTFKPNgnnvhRXi52JLi7kypsMwYqD+aDT+272BwVLK4nQ/nZC8lAySFDIKee+nmOBdBpRJrzC/oRSUmRbdzQUFdTh4uSpY7zmU5d3uNEP8JH94SMOsRcNtvNds/5e8nCMw5o/6b5GYZ8tZhkXlWtpm6SZrCMB0IjUKGX/tNGpl3mGIrIJSg2kW/9G+SZpR9FKTAbvpCXRQU4lnQ7Rgdug3QffUg79oje/p4Kf4q8oLENUU52Lm76ct6uP2Q1D6dD+wX+Gqd3VbIH5+jow0kENRKIrLnkAdLn+DVGpyeYl6iMOk9qnIvTrpDBK0JEa4z4ljryafhge1HYwnB8pdoYjysRl1mba/30ZmZpeMsuRbXrymPgwgypfZSacUiuNHh74CTK0ytGF9zVEg7WBziKe+9BCMaPpcxYp7wTfBoZ+4Pbg1knwCyphzAeh68KrMQhm+4Yghc1O5uJ/0OeNqBQh4UEj/Aj/sA2VmTvV0TwdM43+mx7XYR/bXjLn5jrVGXyTB7o7oORJwBDhVtdEfeU5qPjVparifVA1FMSHEpY=
