@@ -1,3 +1,8 @@
 #!/usr/bin/env node
 "use strict";
-require("../lib/index.js");
+const { minifyFile } = require("../lib/index.js");
+
+Promise.all(process.argv.slice(2).map(minifyFile)).catch(function(e) {
+  console.error(e);
+  process.exit(1);
+});

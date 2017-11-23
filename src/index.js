@@ -32,13 +32,8 @@ const plugins = [
   ]
 ].map(([name, opts]) => require(name)(opts));
 
-const minifyFile = filename =>
+export const minifyFile = filename =>
   [...plugins, it => writeFile(filename, it)].reduce(
     (acc, it) => acc.then(it),
     readFile(filename)
   );
-
-Promise.all(process.argv.slice(2).map(minifyFile)).catch(e => {
-  console.error(e);
-  process.exit(1);
-});
