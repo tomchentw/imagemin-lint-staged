@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`index module should work as expected 1`] = `
+exports[`index module minifyFile function should work as expected 1`] = `
 Array [
   Object {
     "f": "./src/__fixtures__/test.gif",
@@ -21,7 +21,7 @@ Array [
 ]
 `;
 
-exports[`index module should work as expected 2`] = `
+exports[`index module minifyFile function should work as expected 2`] = `
 Array [
   Object {
     "f": "./src/__fixtures__/test.gif",

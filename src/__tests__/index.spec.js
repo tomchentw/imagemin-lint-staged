@@ -1,22 +1,36 @@
-const path = require("path");
-const fs = require("fs");
-const { execSync } = require("child_process");
+import path from "path";
+import fs from "fs";
+import child_process from "child_process";
+import promisify from "util.promisify";
+
+const stat = promisify(fs.stat);
+const exec = promisify(child_process.exec);
 
 describe("index module", () => {
-  const FILENAMES =
-    "./src/__fixtures__/test.gif ./src/__fixtures__/test.jpg ./src/__fixtures__/test.png ./src/__fixtures__/test.svg";
+  const FILENAMES = "./src/__fixtures__/test.gif ./src/__fixtures__/test.jpg ./src/__fixtures__/test.png ./src/__fixtures__/test.svg".split(
+    " "
+  );
 
   const stats = () =>
-    FILENAMES.split(" ").map(f => ({ f, size: fs.statSync(f).size }));
+    Promise.all(
+      FILENAMES.map(async f => {
+        const { size } = await stat(f);
+        return { f, size };
+      })
+    );
 
-  it("should work as expected", () => {
-    const before = stats();
-    execSync(`node ./src/index.js ${FILENAMES}`);
-    const after = stats();
-    execSync(`git checkout .`);
-    expect(after).not.toEqual(before);
+  const { minifyFile } = require("../index");
 
-    expect(before).toMatchSnapshot();
-    expect(after).toMatchSnapshot();
+  describe("minifyFile function", () => {
+    it("should work as expected", async () => {
+      const before = await stats();
+      await Promise.all(FILENAMES.map(minifyFile));
+      const after = await stats();
+      await exec(`git checkout .`);
+      expect(after).not.toEqual(before);
+
+      expect(before).toMatchSnapshot();
+      expect(after).toMatchSnapshot();
+    });
   });
 });
