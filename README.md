@@ -1,7 +1,7 @@
 # imagemin-lint-staged
 > imagemin CLI designed for lint-staged usage with sensible defaults
 
-[![Version][npm-image]][npm-url] [![Travis CI][travis-image]][travis-url] [![Quality][codeclimate-image]][codeclimate-url] [![Coverage][codeclimate-coverage-image]][codeclimate-coverage-url] [![Dependencies][gemnasium-image]][gemnasium-url] [![Gitter][gitter-image]][gitter-url]
+[![Version][npm-image]][npm-url] [![Travis CI][travis-image]][travis-url] [![Quality][codeclimate-maintainability-image]][codeclimate-maintainability-url] [![Coverage][codeclimate-c-image]][codeclimate-c-url] [![Dependencies][gemnasium-image]][gemnasium-url] [![Gitter][gitter-image]][gitter-url]
 
 
 ## Installation
@@ -43,10 +43,10 @@ N/A
 
 [travis-image]: https://img.shields.io/travis/tomchentw/imagemin-lint-staged.svg?style=flat-square
 [travis-url]: https://travis-ci.org/tomchentw/imagemin-lint-staged
-[codeclimate-image]: https://img.shields.io/codeclimate/github/tomchentw/imagemin-lint-staged.svg?style=flat-square
-[codeclimate-url]: https://codeclimate.com/github/tomchentw/imagemin-lint-staged
-[codeclimate-coverage-image]: https://img.shields.io/codeclimate/coverage/github/tomchentw/imagemin-lint-staged.svg?style=flat-square
-[codeclimate-coverage-url]: https://codeclimate.com/github/tomchentw/imagemin-lint-staged
+[codeclimate-maintainability-image]: https://img.shields.io/codeclimate/maintainability/tomchentw/imagemin-lint-staged.svg?style=flat-square
+[codeclimate-maintainability-url]: https://codeclimate.com/github/tomchentw/imagemin-lint-staged
+[codeclimate-c-image]: https://img.shields.io/codeclimate/c/tomchentw/imagemin-lint-staged.svg?style=flat-square
+[codeclimate-c-url]: https://codeclimate.com/github/tomchentw/imagemin-lint-staged
 [gemnasium-image]: https://img.shields.io/gemnasium/tomchentw/imagemin-lint-staged.svg?style=flat-square
 [gemnasium-url]: https://gemnasium.com/tomchentw/imagemin-lint-staged
 [gitter-image]: https://badges.gitter.im/Join%20Chat.svg
