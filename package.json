@@ -24,11 +24,9 @@
     "precommit": "lint-staged",
     "test": "jest --runInBand",
     "prebuild:lib": "rimraf lib",
-    "build:lib":
-      "babel-multi-env --multi-versions 8.0.0 6.0.0 --out-dir lib --given 'src/**/*.js'",
+    "build:lib": "cp 'src/**/*.js' lib/",
     "precommit:lib": "npm run build:lib",
-    "commit:lib":
-      "git add -A && git commit -m 'chore(lib): compile from src with `babel-multi-env`'",
+    "commit:lib": "git add -A && git commit -m 'chore(lib): copy from src'",
     "prerelease": "npm run commit:lib",
     "release": "standard-version"
   },
@@ -36,33 +34,17 @@
     "*.{png,jpeg,jpg,gif,svg}": ["imagemin-lint-staged", "git add"],
     "*.{js,jsx,json,css}": ["prettier --write", "git add"]
   },
-  "babel": {
-    "plugins": ["transform-object-rest-spread"],
-    "env": {
-      "test": {
-        "presets": [["env"]]
-      }
-    }
-  },
   "jest": {
     "testPathIgnorePatterns": ["\\d+\\.\\d+\\.\\d+"]
   },
   "dependencies": {
-    "babel-runtime": "^7.0.0-beta.3",
     "imagemin-gifsicle": "^6.0.1",
     "imagemin-jpegtran": "^6.0.0",
     "imagemin-optipng": "^6.0.0",
     "imagemin-svgo": "^7.0.0",
-    "semver": "^5.4.1",
     "util.promisify": "^1.0.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.0.0-0",
-    "babel-core": "^7.0.0-beta.3",
-    "babel-multi-env": "^0.6.1",
-    "babel-plugin-transform-object-rest-spread": "^7.0.0-beta.3",
-    "babel-plugin-transform-runtime": "^7.0.0-beta.3",
-    "babel-preset-env": "^7.0.0-beta.3",
     "husky": "^0.14.3",
     "jest": "^21.3.0-beta.2",
     "lint-staged": "^5.0.0",
