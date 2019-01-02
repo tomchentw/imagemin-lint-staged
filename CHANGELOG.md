@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.4.0"></a>
+# [0.4.0](https://github.com/tomchentw/imagemin-lint-staged/compare/v0.3.1...v0.4.0) (2019-01-02)
+
+
+### Features
+
+* **lib:** change to commonjs export ([11e3382](https://github.com/tomchentw/imagemin-lint-staged/commit/11e3382))
+* **package.json:** remove `babel-multi-env` ([f427662](https://github.com/tomchentw/imagemin-lint-staged/commit/f427662))
+
+
+
 <a name="0.3.1"></a>
 ## [0.3.1](https://github.com/tomchentw/imagemin-lint-staged/compare/v0.3.0...v0.3.1) (2019-01-02)
 
