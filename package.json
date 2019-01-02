@@ -20,7 +20,6 @@
   "files": [
     "bin/",
     "lib/",
-    "src/",
     "CHANGELOG.md"
   ],
   "keywords": [
@@ -32,16 +31,11 @@
   ],
   "scripts": {
     "test": "jest --runInBand",
-    "prebuild:lib": "rimraf lib",
-    "build:lib": "cp 'src/**/*.js' lib/",
-    "precommit:lib": "npm run build:lib",
-    "commit:lib": "git add -A && git commit -m 'chore(lib): copy from src'",
-    "prerelease": "npm run commit:lib",
     "release": "standard-version"
   },
   "lint-staged": {
     "*.{png,jpeg,jpg,gif,svg}": [
-      "imagemin-lint-staged",
+      "node ./bin/index.js",
       "git add"
     ],
     "*.{js,jsx,json,css}": [
