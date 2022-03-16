@@ -1,6 +1,6 @@
 {
   "name": "@democrance/imagemin-lint-staged",
-  "version": "0.4.2",
+  "version": "0.4.3",
   "description": "imagemin CLI designed for lint-staged usage with sensible defaults",
   "keywords": [
     "imagemin",
@@ -23,6 +23,7 @@
     "email": "developer@tomchentw.com",
     "url": "https://github.com/tomchentw"
   },
+  "type": "module",
   "bin": "bin/index.js",
   "files": [
     "bin/index.js",
@@ -30,21 +31,21 @@
     "CHANGELOG.md"
   ],
   "scripts": {
-    "prepare": "husky install",
     "compile": "tsc",
-    "release": "npm run compile && standard-version",
+    "prepare": "husky install",
+    "release": "standard-version",
     "test": "jest --runInBand"
   },
   "lint-staged": {
-    "{!(package)*.json,*.code-snippets,.!(browserslist)*rc}": [
-      "prettier --parser=json --write"
-    ],
     "*.{js,jsx,json,css}": [
       "prettier --write"
     ],
     "*.{png,jpeg,jpg,gif,svg,webp}": [
       "node ./bin/index.js",
       "git add"
+    ],
+    "{!(package)*.json,*.code-snippets,.!(browserslist)*rc}": [
+      "prettier --parser=json --write"
     ]
   },
   "dependencies": {

@@ -64,11 +64,6 @@ const plugins = ([
   }
 });
 
-const write = (filename: fs.PathOrFileDescriptor, data: NodeJS.ArrayBufferView) => writeFile(filename, data)
-
 export const minifyFile = (filename: string) =>
-  [
-    ...plugins,
-    write
-  ]
+  [...plugins, (it: NodeJS.ArrayBufferView) => writeFile(filename, it)]
     .reduce((acc, it) => acc.then(it), readFile(filename));
