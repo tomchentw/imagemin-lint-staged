@@ -25,13 +25,14 @@
   },
   "bin": "bin/index.js",
   "files": [
-    "bin/",
-    "lib/",
+    "bin/index.js",
+    "lib/index.js",
     "CHANGELOG.md"
   ],
   "scripts": {
     "prepare": "husky install",
-    "release": "standard-version",
+    "compile": "tsc",
+    "release": "npm run compile && standard-version",
     "test": "jest --runInBand"
   },
   "lint-staged": {
@@ -41,7 +42,7 @@
     "*.{js,jsx,json,css}": [
       "prettier --write"
     ],
-    "*.{png,jpeg,jpg,gif,svg}": [
+    "*.{png,jpeg,jpg,gif,svg,webp}": [
       "node ./bin/index.js",
       "git add"
     ]
@@ -51,14 +52,22 @@
     "imagemin-jpegtran": "^7.0.0",
     "imagemin-optipng": "^8.0.0",
     "imagemin-svgo": "^10.0.1",
+    "imagemin-webp": "^7.0.0",
     "util.promisify": "^1.1.1"
   },
   "devDependencies": {
     "@babel/core": "^7.17.7",
     "@babel/plugin-transform-runtime": "^7.17.0",
     "@babel/preset-env": "^7.16.11",
+    "@types/imagemin-gifsicle": "^7.0.1",
+    "@types/imagemin-jpegtran": "^5.0.1",
+    "@types/imagemin-optipng": "^5.2.1",
+    "@types/imagemin-svgo": "^10.0.1",
+    "@types/imagemin-webp": "^7.0.0",
+    "@types/util.promisify": "^1.0.4",
     "babel-core": "^6.26.3",
     "babel-jest": "^27.5.1",
+    "babel-plugin-transform-import-meta": "^2.1.1",
     "cross-env": "^7.0.3",
     "husky": "^7.0.4",
     "jest": "^27.5.1",
