@@ -17,6 +17,7 @@ specifiers:
   '@babel/preset-env': ^7.16.11
   babel-core: ^6.26.3
   babel-jest: ^27.5.1
+  cross-env: ^7.0.3
   husky: ^7.0.4
   imagemin-gifsicle: ^7.0.0
   imagemin-jpegtran: ^7.0.0
@@ -44,6 +45,7 @@ devDependencies:
   '@babel/preset-env': 7.16.11_@babel+core@7.17.7
   babel-core: 6.26.3
   babel-jest: 27.5.1_@babel+core@7.17.7
+  cross-env: 7.0.3
   husky: 7.0.4
   jest: 27.5.1
   lint-staged: 12.3.6
@@ -2523,6 +2525,14 @@ packages:
 
   /core-util-is/1.0.3:
     resolution: {integrity: sha512-ZQBvi1DcpJ4GDqanjucZ2Hj3wEO5pZDS89BWbkcrvdxksJorwUDDZamX9ldFkp9aw2lmBDLgkObEA4DWNJ9FYQ==}
+
+  /cross-env/7.0.3:
+    resolution: {integrity: sha512-+/HKd6EgcQCJGh2PSjZuUitQBQynKor4wrFbRg4DtAgS1aWO+gU52xpH7M9ScGgXSYmAVS9bIJ8EzuaGw0oNAw==}
+    engines: {node: '>=10.14', npm: '>=6', yarn: '>=1'}
+    hasBin: true
+    dependencies:
+      cross-spawn: 7.0.3
+    dev: true
 
   /cross-spawn/5.1.0:
     resolution: {integrity: sha1-6L0O/uWPz/b4+UUQoKVUu/ojVEk=}
