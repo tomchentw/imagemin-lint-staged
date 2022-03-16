@@ -1,27 +1,7 @@
 {
-  "name": "imagemin-lint-staged",
-  "version": "0.4.0",
+  "name": "@democrance/imagemin-lint-staged",
+  "version": "0.4.4",
   "description": "imagemin CLI designed for lint-staged usage with sensible defaults",
-  "license": "MIT",
-  "author": {
-    "name": "tomchentw",
-    "email": "developer@tomchentw.com",
-    "url": "https://github.com/tomchentw"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/tomchentw/imagemin-lint-staged"
-  },
-  "bugs": {
-    "url": "https://github.com/tomchentw/imagemin-lint-staged/issues"
-  },
-  "homepage": "https://github.com/tomchentw/imagemin-lint-staged/",
-  "bin": "bin/index.js",
-  "files": [
-    "bin/",
-    "lib/",
-    "CHANGELOG.md"
-  ],
   "keywords": [
     "imagemin",
     "CLI",
@@ -29,56 +9,87 @@
     "compress images",
     "lint-staged"
   ],
+  "homepage": "https://github.com/tomchentw/imagemin-lint-staged/",
+  "bugs": {
+    "url": "https://github.com/tomchentw/imagemin-lint-staged/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tomchentw/imagemin-lint-staged"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "tomchentw",
+    "email": "developer@tomchentw.com",
+    "url": "https://github.com/tomchentw"
+  },
+  "type": "module",
+  "bin": "bin/index.js",
+  "files": [
+    "bin/index.js",
+    "lib/index.js",
+    "CHANGELOG.md"
+  ],
   "scripts": {
-    "test": "jest --runInBand",
-    "release": "standard-version"
+    "compile": "tsc",
+    "prepare": "husky install",
+    "release": "standard-version",
+    "test": "jest --runInBand"
   },
   "lint-staged": {
-    "*.{png,jpeg,jpg,gif,svg}": [
+    "*.{js,jsx,json,css}": [
+      "prettier --write"
+    ],
+    "*.{png,jpeg,jpg,gif,svg,webp}": [
       "node ./bin/index.js",
       "git add"
     ],
-    "*.{js,jsx,json,css}": [
-      "prettier --write",
-      "git add"
-    ]
-  },
-  "babel": {
-    "env": {
-      "test": {
-        "presets": [
-          "@babel/preset-env"
-        ]
-      }
-    }
-  },
-  "jest": {
-    "testPathIgnorePatterns": [
-      "\\d+\\.\\d+\\.\\d+"
+    "{!(package)*.json,*.code-snippets,.!(browserslist)*rc}": [
+      "prettier --parser=json --write"
     ]
   },
   "dependencies": {
-    "imagemin-gifsicle": "^6.0.1",
-    "imagemin-jpegtran": "^6.0.0",
-    "imagemin-optipng": "^6.0.0",
-    "imagemin-svgo": "^7.0.0",
-    "util.promisify": "^1.0.0"
+    "imagemin-gifsicle": "^7.0.0",
+    "imagemin-jpegtran": "^7.0.0",
+    "imagemin-optipng": "^8.0.0",
+    "imagemin-svgo": "^10.0.1",
+    "imagemin-webp": "^7.0.0",
+    "util.promisify": "^1.1.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.2.2",
-    "@babel/preset-env": "^7.2.3",
-    "babel-core": "^7.0.0-bridge.0",
-    "babel-jest": "^23.6.0",
-    "husky": "^1.3.1",
-    "jest": "^23.6.0",
-    "lint-staged": "^8.1.0",
-    "prettier": "^1.7.4",
-    "rimraf": "^2.6.2",
-    "standard-version": "^4.2.0"
+    "@babel/core": "^7.17.7",
+    "@babel/plugin-transform-runtime": "^7.17.0",
+    "@babel/preset-env": "^7.16.11",
+    "@types/imagemin-gifsicle": "^7.0.1",
+    "@types/imagemin-jpegtran": "^5.0.1",
+    "@types/imagemin-optipng": "^5.2.1",
+    "@types/imagemin-svgo": "^10.0.1",
+    "@types/imagemin-webp": "^7.0.0",
+    "@types/util.promisify": "^1.0.4",
+    "babel-core": "^6.26.3",
+    "babel-jest": "^27.5.1",
+    "babel-plugin-transform-import-meta": "^2.1.1",
+    "cross-env": "^7.0.3",
+    "husky": "^7.0.4",
+    "jest": "^27.5.1",
+    "lint-staged": "^12.3.6",
+    "prettier": "^2.6.0",
+    "rimraf": "^3.0.2",
+    "standard-version": "^9.3.2",
+    "ts-jest": "^27.1.3",
+    "typescript": "^4.6.2"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
+  "pnpm": {
+    "neverBuiltDependencies": [
+      "fsevents",
+      "level",
+      "node-gyp"
+    ],
+    "overrides": {
+      "core-js": "^3.0.0",
+      "fsevents": "^2.0.0",
+      "svgo": "^2.0.0",
+      "uuid": "^8.0.0"
     }
   }
 }

@@ -1,0 +1,3 @@
+#!/bin/sh
+
+pnpx --no-install cross-env PRE_COMMIT=true lint-staged
