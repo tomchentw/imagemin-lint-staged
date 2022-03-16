@@ -1,6 +1,6 @@
 {
   "name": "@democrance/imagemin-lint-staged",
-  "version": "0.4.3",
+  "version": "0.4.4",
   "description": "imagemin CLI designed for lint-staged usage with sensible defaults",
   "keywords": [
     "imagemin",

@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.4.4](https://github.com/tomchentw/imagemin-lint-staged/compare/v0.4.1...v0.4.4) (2022-03-16)
+
+
+### Features
+
+* add TS ([d2c4346](https://github.com/tomchentw/imagemin-lint-staged/commit/d2c43465d0487c886e7b1039d11b090321eafc4d))
+
 ### [0.4.3](https://github.com/tomchentw/imagemin-lint-staged/compare/v0.4.1...v0.4.3) (2022-03-16)
 
 
