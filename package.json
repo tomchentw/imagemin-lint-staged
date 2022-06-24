@@ -35,12 +35,10 @@
   },
   "lint-staged": {
     "*.{png,jpeg,jpg,gif,svg}": [
-      "node ./bin/index.js",
-      "git add"
+      "node ./bin/index.js"
     ],
     "*.{js,jsx,json,css}": [
-      "prettier --write",
-      "git add"
+      "prettier --write"
     ]
   },
   "babel": {
