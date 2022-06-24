@@ -1,6 +1,6 @@
 {
   "name": "imagemin-lint-staged",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "imagemin CLI designed for lint-staged usage with sensible defaults",
   "license": "MIT",
   "author": {

@@ -1,6 +1,13 @@
-# Change Log
+# Changelog
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+## [0.5.0](https://github.com/tomchentw/imagemin-lint-staged/compare/v0.4.0...v0.5.0) (2022-06-24)
+
+
+### Features
+
+* **package.json:** upgrade dependencies ([#14](https://github.com/tomchentw/imagemin-lint-staged/issues/14)) ([d80565a](https://github.com/tomchentw/imagemin-lint-staged/commit/d80565a15e5b747cf6e8c67152cb16830b8e4042))
 
 <a name="0.4.0"></a>
 # [0.4.0](https://github.com/tomchentw/imagemin-lint-staged/compare/v0.3.1...v0.4.0) (2019-01-02)
