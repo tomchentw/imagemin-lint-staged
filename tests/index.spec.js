@@ -7,24 +7,27 @@ const stat = promisify(fs.stat);
 const exec = promisify(child_process.exec);
 
 describe("index module", () => {
-  const FILENAMES = "./lib/__fixtures__/test.gif ./lib/__fixtures__/test.jpg ./lib/__fixtures__/test.png ./lib/__fixtures__/test.svg".split(
-    " "
-  );
+  const FILENAMES =
+    "./__fixtures__/test.gif ./__fixtures__/test.jpg ./__fixtures__/test.png ./__fixtures__/test.svg".split(
+      " "
+    );
 
   const stats = () =>
     Promise.all(
-      FILENAMES.map(async f => {
-        const { size } = await stat(f);
+      FILENAMES.map(async (f) => {
+        const { size } = await stat(path.resolve(__dirname, f));
         return { f, size };
       })
     );
 
-  const { minifyFile } = require("../index");
+  const { minifyFile } = require("../lib");
 
   describe("minifyFile function", () => {
     it("should work as expected", async () => {
       const before = await stats();
-      await Promise.all(FILENAMES.map(minifyFile));
+      await Promise.all(
+        FILENAMES.map((f) => minifyFile(path.resolve(__dirname, f)))
+      );
       const after = await stats();
       await exec(`git checkout .`);
       expect(after).not.toEqual(before);

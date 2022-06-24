@@ -3,19 +3,19 @@
 exports[`index module minifyFile function should work as expected 1`] = `
 Array [
   Object {
-    "f": "./lib/__fixtures__/test.gif",
+    "f": "./__fixtures__/test.gif",
     "size": 78080,
   },
   Object {
-    "f": "./lib/__fixtures__/test.jpg",
+    "f": "./__fixtures__/test.jpg",
     "size": 50986,
   },
   Object {
-    "f": "./lib/__fixtures__/test.png",
+    "f": "./__fixtures__/test.png",
     "size": 71834,
   },
   Object {
-    "f": "./lib/__fixtures__/test.svg",
+    "f": "./__fixtures__/test.svg",
     "size": 25118,
   },
 ]
@@ -24,19 +24,19 @@ Array [
 exports[`index module minifyFile function should work as expected 2`] = `
 Array [
   Object {
-    "f": "./lib/__fixtures__/test.gif",
+    "f": "./__fixtures__/test.gif",
     "size": 80201,
   },
   Object {
-    "f": "./lib/__fixtures__/test.jpg",
+    "f": "./__fixtures__/test.jpg",
     "size": 45131,
   },
   Object {
-    "f": "./lib/__fixtures__/test.png",
+    "f": "./__fixtures__/test.png",
     "size": 61692,
   },
   Object {
-    "f": "./lib/__fixtures__/test.svg",
+    "f": "./__fixtures__/test.svg",
     "size": 20698,
   },
 ]
