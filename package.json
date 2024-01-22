@@ -1,8 +1,15 @@
 {
-  "name": "imagemin-lint-staged",
+  "name": "@davidsneighbour/imagemin-lint-staged",
   "version": "0.5.1",
   "description": "imagemin CLI designed for lint-staged usage with sensible defaults",
   "license": "MIT",
+  "maintainers": [
+    {
+      "name": "davidsneighbour",
+      "email": "patrick@davids-neighbour.com",
+      "url": "https://github.com/davidsneighbour"
+    }
+  ],
   "author": {
     "name": "tomchentw",
     "email": "developer@tomchentw.com",
@@ -10,12 +17,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/tomchentw/imagemin-lint-staged"
+    "url": "https://github.com/davidsneighbour/imagemin-lint-staged"
   },
   "bugs": {
-    "url": "https://github.com/tomchentw/imagemin-lint-staged/issues"
+    "url": "https://github.com/davidsneighbour/imagemin-lint-staged/issues"
   },
-  "homepage": "https://github.com/tomchentw/imagemin-lint-staged/",
+  "homepage": "https://github.com/davidsneighbour/imagemin-lint-staged/",
   "bin": "bin/index.js",
   "files": [
     "bin/",
@@ -56,21 +63,22 @@
     ]
   },
   "dependencies": {
+    "cosmiconfig": "^9.0.0",
     "imagemin-gifsicle": "^7.0.0",
     "imagemin-jpegtran": "^7.0.0",
     "imagemin-optipng": "^8.0.0",
-    "imagemin-svgo": "^9.0.0",
-    "util.promisify": "^1.0.0"
+    "imagemin-svgo": "^10.0.1",
+    "util.promisify": "^1.1.2"
   },
   "devDependencies": {
-    "@babel/core": "^7.2.2",
-    "@babel/preset-env": "^7.2.3",
-    "babel-jest": "^28.1.1",
-    "husky": "^8.0.1",
-    "jest": "^28.1.1",
-    "lint-staged": "^13.0.2",
-    "prettier": "^2.7.1",
-    "rimraf": "^3.0.2",
+    "@babel/core": "^7.23.7",
+    "@babel/preset-env": "^7.23.8",
+    "babel-jest": "^29.7.0",
+    "husky": "^8.0.3",
+    "jest": "^29.7.0",
+    "lint-staged": "^15.2.0",
+    "prettier": "^3.2.4",
+    "rimraf": "^5.0.5",
     "standard-version": "^9.5.0"
   },
   "husky": {
