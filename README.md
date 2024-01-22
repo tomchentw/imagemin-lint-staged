@@ -39,5 +39,5 @@ N/A
 [npm-image]: https://img.shields.io/npm/v/imagemin-lint-staged.svg?style=flat-square
 [npm-url]: https://www.npmjs.org/package/imagemin-lint-staged
 
-[github-workflows-pr-image]: https://github.com/tomchentw/imagemin-lint-staged/actions/workflows/pr.yml/badge.svg
-[github-workflows-pr-url]: https://github.com/tomchentw/imagemin-lint-staged/actions/workflows/pr.yml
+[github-workflows-pr-image]: https://github.com/davidsneighbour/imagemin-lint-staged/actions/workflows/pr.yml/badge.svg
+[github-workflows-pr-url]: https://github.com/davidsneighbour/imagemin-lint-staged/actions/workflows/pr.yml
